@@ -17,12 +17,13 @@ class App extends React.Component{
   componentDidMount() {
     this.setState( {loading: true} )
     fetch("/todos")
-      .then( response => response.json())
+      .then( response => response.text())
       .then( data => {
-        this.setState({
-          loading: false,
-          todos: data.todos
-        })
+        console.log(data)
+        // this.setState({
+        //   loading: false,
+        //   todos: data.todos
+        // })
       })
 
   }
