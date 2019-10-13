@@ -15,15 +15,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://srinjan-ghosh.github.io/React_Todo_App/",
-  "proxy": "https://flask-todo-react-python.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",
