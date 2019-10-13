@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Header, Divider, Segment, Container } from 'semantic-ui-react'
+import { Header, Segment, Container } from 'semantic-ui-react'
 import TodoItem from './components/TodoItem';
 import NewTodo from './components/NewTodo';
 
@@ -16,14 +16,11 @@ class App extends React.Component{
 
   componentDidMount() {
     this.setState( {loading: true} )
-    fetch("/todos")
-      .then( response => response.text())
-      .then( data => {
-        console.log(data)
-        // this.setState({
-        //   loading: false,
-        //   todos: data.todos
-        // })
+    fetch("/todos").then( response => response.json()).then( data => {
+        this.setState({
+          loading: false,
+          todos: data.todos
+        })
       })
 
   }
@@ -94,7 +91,11 @@ class App extends React.Component{
     console.log(this.state.todos)
 
     const todos = this.state.todos.map( todo => {
-      return <TodoItem key={todo.id} todo={todo} handleChange={this.handleChange} delete={this.handleDelete}/>
+      return (
+        <Segment key={todo.id}>
+          <TodoItem key={todo.id} todo={todo} handleChange={this.handleChange} delete={this.handleDelete}/>
+        </Segment>
+      )
     })
 
     return (
