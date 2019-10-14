@@ -21,7 +21,7 @@ class NewTodo extends React.Component {
             "todo": this.state.todo,
             "done": false
         }
-        const response = await fetch("/add" , {
+        const response = await fetch("https://flask-todo-react-python.herokuapp.com/add" , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

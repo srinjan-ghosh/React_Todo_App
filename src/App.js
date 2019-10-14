@@ -61,7 +61,7 @@ class App extends React.Component{
   }
 
   updateTodoDone = async (id) => {
-    await fetch(`/update_checked/${id}`, {
+    await fetch(`https://flask-todo-react-python.herokuapp.com/update_checked/${id}`, {
       method: 'PUT'
     })
 
@@ -80,7 +80,7 @@ class App extends React.Component{
   }
 
   deleteTodo = async(id) => {
-    await fetch(`/delete/${id}`, {
+    await fetch(`https://flask-todo-react-python.herokuapp.com/delete/${id}`, {
       method: 'DELETE'
     })
 
