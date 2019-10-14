@@ -16,7 +16,7 @@ class App extends React.Component{
 
   componentDidMount() {
     this.setState( {loading: true} )
-    fetch("/todos").then( response => response.json()).then( data => {
+    fetch("https://flask-todo-react-python.herokuapp.com/todos").then( response => response.json()).then( data => {
         this.setState({
           loading: false,
           todos: data.todos
