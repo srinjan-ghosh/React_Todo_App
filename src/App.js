@@ -32,16 +32,18 @@ class App extends React.Component{
     // console.log(this.state.todos)
   }
 
-  getId = () => {
-    let length = this.state.todos.length
-    let id
-    this.state.todos.forEach(todo => {
-      if(todo.id === length)
-        id = todo.id
-    });
+  // getId = () => {
+  //   let length = this.state.todos.length
+  //   let id=0
+  //   for(let i=0;i<length;i++){
+  //     if(i===0){
+  //       id = this.state.todos[i].id
+  //       break;
+  //     }
+  //   }
 
-    return id + 1
-  }
+  //   return id + 1
+  // }
 
   handleChange = (id) => {
     // make changes in state 
@@ -102,7 +104,7 @@ class App extends React.Component{
       <Container style= {{paddingTop: "25px"}}>
         <Header as='h1' textAlign='center'>TODO APP</Header>
         <Header as='h3' textAlign='left'>ADD A NEW TODO</Header>
-        <NewTodo newTodo={this.newTodo} id={this.getId()}/>
+        <NewTodo newTodo={this.newTodo} />
         <Header as='h3' textAlign='left'>YOUR TODOS</Header>
         <Segment>
           {todos}
